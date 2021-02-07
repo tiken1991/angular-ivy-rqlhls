@@ -1,4 +1,8 @@
 <hello name="{{ name }}"></hello>
-<svg>
-  <rect x="0" y="0" [ngStyle]="{width: '100px', height: '20px', fill: 'blue'}"></rect>
+<svg @rect>
+  <rect [ngStyle]="{x: 0, y: 0,width: '100px', height: '20px', fill: 'blue'}"></rect>
+
+  <rect [ngStyle]="{x: 0, y: 22,width: '200px', height: '20px', fill: 'green'}"></rect>
+
+  <rect [ngStyle]="{x: 0, y: 44,width: '150px', height: '20px', fill: 'red'}"></rect>
 </svg>
