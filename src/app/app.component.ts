@@ -3,6 +3,7 @@ import {
   animation,
   keyframes,
   query,
+sequence,
   stagger,
   style,
   transition,
@@ -18,17 +19,17 @@ import { Component, VERSION } from "@angular/core";
     trigger("rect", [
       transition(":enter", [
         query("rect, :enter", [
-          stagger(300, [
-            style({ width: 0 }),
+          sequence([stagger(300, [
+            style({ width: 0, height: 0, x: 0 }),
             animate(
-              "1s",
+              "0.5s ease-in-out",
               keyframes([
-                style({ width: "0%" }),
-                style({ width: "200%" }),
-                style({ width: "*" })
+                style({ width: "0%", height: 0 , x: '10%'}),
+                style({ width: "200%", height: '*' }),
+                style({ width: "*", height: '*' })
               ])
             )
-          ])
+          ])])
         ])
       ])
     ])
